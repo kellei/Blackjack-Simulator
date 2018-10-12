@@ -27,7 +27,7 @@ class Player (object):
 # #returns the integer value of the cards in hand
 # def hand_value(hand):
 
-#create players
+#create playerss
 dealer = Player("Dealer")
 player_1 = Player("Player 1")
 

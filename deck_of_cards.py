@@ -32,7 +32,7 @@ class Deck (object):
 			card.show()
 
 	def shuffle(self):
-		# verify if this is truly random
+		# verify if this is truly randomm
 		# for i in range(len(self.cards)-1, 0, -1):
 		# 	rand = random.randint(0, i)
 		# 	self.cards[i], self.cards[rand] = self.cards[rand], self.cards[i]
