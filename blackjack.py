@@ -1,25 +1,6 @@
 import deck_of_cards as deck
-
-class Player (object):
-	def __init__(self, name):
-		self.hand = []
-		self.name = name
-
-	def draw(self, deck):
-		self.hand.append(deck.draw())
-
-	def hand_value(self):
-		val_total = 0
-		for card in self.hand:
-			if card.value >= 10:
-				val_total += 10
-			else:
-				val_total += card.value
-		return val_total
-
-	def showHand (self):
-		for card in self.hand:
-			card.show()
+import player
+import dealer
 
 # #returns the integer value of the c
 # def card_value(card):
@@ -28,12 +9,15 @@ class Player (object):
 # def hand_value(hand):
 
 #create playerss
-dealer = Player("Dealer")
-player_1 = Player("Player 1")
+dealer = dealer.Dealer("Dealer")
+player_1 = player.Player("Player 1")
 
 #create a deck of cards
 main_deck = deck.Deck()
 main_deck.shuffle()
+
+def draw(num_players):
+	
 
 #draw card sequence
 player_1.draw(main_deck)
