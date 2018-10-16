@@ -3,6 +3,7 @@ class Dealer (object):
 		self.hand = []
 		self.name = name
 
+	#draws one card from the deck into the player's hand
 	def draw(self, deck):
 		self.hand.append(deck.draw())
 
@@ -14,6 +15,9 @@ class Dealer (object):
 			else:
 				val_total += card.value
 		return val_total
+
+	def show_first (self):
+		self.hand[0].show()
 
 	def showHand (self):
 		for card in self.hand:
