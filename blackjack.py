@@ -25,23 +25,27 @@ def draw_sequence():
 draw_sequence()
 
 #print outputs
-print ("\n",dealer.name, "has:")
+print ("\n",dealer.name, "has:", dealer.hand[0].value)
 dealer.show_first()
 
 print ("\n",player_1.name, "has:", player_1.hand_value())
 player_1.showHand()
 
-user_action = input("\nPress H to HIT and S to STAND: ")
+user_action = input("\nPress H to HIT and S to STAND: ").lower()
 print("User action is: ", user_action)
 
-while user_action not in ["H","h","s","S"]:
-	user_action = input("\nPress H to HIT and S to STAND: ")
+while user_action not in ["h","s"]:
+	user_action = input("\nPress H to HIT and S to STAND: ").lower()
 
-if user_action == "h" or "H":
+if user_action == "h" :
+	print(user_action)
 	player_1.draw(main_deck)
 	print("===============================================")
 	print ("\n",player_1.name, "has:", player_1.hand_value())
 	player_1.showHand()
 
+print("===============================================")
 print ("\n",dealer.name, "has:", dealer.hand_value())
 dealer.showHand()
+print ("\n",player_1.name, "has:", player_1.hand_value())
+player_1.showHand()	
