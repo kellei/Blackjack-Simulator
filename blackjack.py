@@ -16,12 +16,21 @@ player_1 = player.Player("Player 1")
 main_deck = deck.Deck()
 main_deck.shuffle()
 
+#initial draw sequence between platyer_1 and dealer
 def draw_sequence():
 	player_1.draw(main_deck)
 	dealer.draw(main_deck)
 	player_1.draw(main_deck)
 	dealer.draw(main_deck)
 
+def cards_on_table():
+	print("===============================================")
+	print ("\n",dealer.name, "has:", dealer.hand_value())
+	dealer.showHand()
+	print ("\n",player_1.name, "has:", player_1.hand_value())
+	player_1.showHand()	
+
+#run draw function
 draw_sequence()
 
 #print outputs
@@ -31,21 +40,34 @@ dealer.show_first()
 print ("\n",player_1.name, "has:", player_1.hand_value())
 player_1.showHand()
 
-user_action = input("\nPress H to HIT and S to STAND: ").lower()
-print("User action is: ", user_action)
+#loop runs until either player_1 or dealer busts
+bust = 0
+while bust == False:
 
-while user_action not in ["h","s"]:
+	#request user action 
 	user_action = input("\nPress H to HIT and S to STAND: ").lower()
 
-if user_action == "h" :
-	print(user_action)
-	player_1.draw(main_deck)
-	print("===============================================")
-	print ("\n",player_1.name, "has:", player_1.hand_value())
-	player_1.showHand()
+	while user_action not in ["h","s"]:
+		user_action = input("\nPress H to HIT and S to STAND: ").lower()
 
-print("===============================================")
-print ("\n",dealer.name, "has:", dealer.hand_value())
-dealer.showHand()
-print ("\n",player_1.name, "has:", player_1.hand_value())
-player_1.showHand()	
+	#player draws card
+	if user_action == "h" :
+		player_1.draw(main_deck)
+
+	#show cards present on table
+	cards_on_table()
+
+	#does player bust?
+	if player_1.hand_value() > 21:
+		bust = True
+
+
+
+
+
+
+
+
+
+
+
