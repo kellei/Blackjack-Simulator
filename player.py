@@ -2,6 +2,7 @@ class Player (object):
 	def __init__(self, name):
 		self.hand = []
 		self.name = name
+		self.bust = False
 
 	#draws one card from the deck into the player's hand
 	def draw(self, deck):
