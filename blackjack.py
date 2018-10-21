@@ -40,9 +40,9 @@ dealer.show_first()
 print ("\n",player_1.name, "has:", player_1.hand_value())
 player_1.showHand()
 
-#loop runs until either player_1 or dealer busts
-bust = 0
-while bust == False:
+#loop runs until either player_1 
+end_turn = 0
+while end_turn == False:
 
 	#request user action 
 	user_action = input("\nPress H to HIT and S to STAND: ").lower()
@@ -54,12 +54,17 @@ while bust == False:
 	if user_action == "h" :
 		player_1.draw(main_deck)
 
+		#does player bust?
+		if player_1.hand_value() > 21:
+			end_turn = True
+			print("Player 1 BUSTED!!!")
+			
+	#player ends turn
+	else:
+		end_turn == True
+
 	#show cards present on table
 	cards_on_table()
-
-	#does player bust?
-	if player_1.hand_value() > 21:
-		bust = True
 
 
 
