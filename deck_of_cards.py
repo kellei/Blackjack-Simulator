@@ -41,14 +41,27 @@ class Deck (object):
 	def draw(self):
 		return self.cards.pop()
 
+	def cards_larger(self, card_value):
+		num_cards = 0
+		card_larger = 0
+		for card in self.cards:
+			num_cards += 1 
+			if card.value > card_value:
+				card_larger += 1
+		return card_larger/num_cards 
 
-# class Player (object):
-# 	def __init__(self):
-# 		self.hand = []
 
-# 	def draw(self, deck):
-# 		self.hand.append(deck.draw())
 
-# 	def showHand (self):
-# 		for card in self.hand:
-# 			card.show()
+
+
+
+
+
+
+
+
+
+
+
+
+
