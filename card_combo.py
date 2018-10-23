@@ -3,11 +3,11 @@ def card_combo (a,b,c=[]):
 	combo_num = 0
 
 	if total == b:
-		combo_num += 1
+		return 1
 
 	elif total > b:
 		#skip and do nothing
-		return
+		return 0
 
 	else:
 		for i in range(len(a)):
