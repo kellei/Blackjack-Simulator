@@ -9,23 +9,30 @@ the goal value b
 how to add up all the match-upi scenarios between the loops
 '''
 
-def card_combo (a,b,c=[]):
+def card_combo (a,b,c=[],d=0):
 	total = sum(c)
+	print ("c={}".format(c))
+	print("d={}".format(d))
+	print("a={}".format(a))
+	d=0
 
 	if total == b:
 		#this combo adds up to goal value
-		print ("{}".format(c))
+		#print ("{}".format(c))
 		return 1
 
-	elif total > b:
+	if total > b:
 		#skip and do nothing
 		return 0
 
-	else:
-		for i in range(len(a)):
-			return card_combo(a[i+1:], b, c+[a[i]])
+	for i in range(len(a)):
+		print("d={}".format(d))
+		print("for loop")
+		d+=card_combo(a[i+1:], b, c+[a[i]], d)
 
-cards = [1,1,1,2]
+	return d
+
+cards = [1,2]
 
 print(card_combo(cards,3))
 
