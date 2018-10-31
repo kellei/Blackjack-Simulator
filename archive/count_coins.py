@@ -4,7 +4,6 @@ def changes(amount, coins):
     for coin in coins:
         for j in range(coin, amount + 1):
             ways[j] += ways[j - coin]
-            print(ways[j])
     return ways[amount]
  
 print (changes(20, [5,10]))

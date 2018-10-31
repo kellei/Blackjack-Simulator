@@ -1,19 +1,22 @@
 '''
-a is a list of avialable cards
+a is a list of available cards
 b is the goal value
 c is a blank list
+d is a recursive variable
 
-for every recursive loop, c stores 1 value from list a if the sume is below
-the goal value b
+for every recursive loop, c stores 1 value from list a and sees
+if the sum is below the goal value b
+
+if sum of c is equal to b, return 1 (adds 1 to d)
 
 how to add up all the match-upi scenarios between the loops
 '''
 
 def card_combo (a,b,c=[],d=0):
 	total = sum(c)
-	print ("c={}".format(c))
-	print("d={}".format(d))
-	print("a={}".format(a))
+	# print ("c={}".format(c))
+	# print("d={}".format(d))
+	# print("a={}".format(a))
 	d=0
 
 	if total == b:
@@ -26,13 +29,13 @@ def card_combo (a,b,c=[],d=0):
 		return 0
 
 	for i in range(len(a)):
-		print("d={}".format(d))
-		print("for loop")
+		# print("d={}".format(d))
+		# print("for loop")
 		d+=card_combo(a[i+1:], b, c+[a[i]], d)
 
 	return d
 
-cards = [1,2]
+# cards = [1,1,2,2,9,1,3]
 
-print(card_combo(cards,3))
+# print(card_combo(cards,3))
 
