@@ -10,15 +10,15 @@ class Card (object):
 
 	def show(self):
 		if self.id_num == 11:
-			print ("{} of {}, ID {}".format("J", self.suit, self.id_num))
+			print ("{} of {}".format("J", self.suit))
 		elif self.id_num == 12:
-			print ("{} of {}, ID {}".format("Q", self.suit, self.id_num))	
+			print ("{} of {}".format("Q", self.suit))	
 		elif self.id_num == 13:
-			print ("{} of {}, ID {}".format("K", self.suit, self.id_num))
+			print ("{} of {}".format("K", self.suit))
 		elif self.id_num == 1:
-			print ("{} of {}, ID {}".format("A", self.suit, self.id_num))
+			print ("{} of {}".format("A", self.suit))
 		else:
-			print ("{} of {}, ID {}".format(self.value, self.suit, self.id_num))
+			print ("{} of {}".format(self.value, self.suit))
 
 class Deck (object):
 	def __init__(self):
@@ -62,6 +62,7 @@ class Deck (object):
 
 deck = Deck()
 deck.show()
+
 
 
 
